@@ -208,4 +208,4 @@ const searchMessage = () => {
             Bg1.classList.remove('active');
             Bg3.classList.remove('active');
             changeBG();
-        });
+        })
