@@ -62,8 +62,8 @@ const searchMessage = () => {
 
     theme.addEventListener('click', openThemeModel));
 
-    
-    
+
+
 
     //===================SIDEBAR===================
 
@@ -94,117 +94,118 @@ const searchMessage = () => {
         fontSizes.forEach(size => {
             size.classList.remove('active');
         })
-    
-    fontSizes.forEach(size => {
 
-        
-        size.addEventListener('click', () => {
-            removeSizeSlector();
-        let fontSize;
-        size.classList.toggle('active');
+        fontSizes.forEach(size => {
 
-            if (size.classList.contains('font-size-1')) {
-                fontSize = '10px';
-                root.style.setProperty('----sticky-top-left', '5.4rem');
-                root.style.setProperty('----sticky-top-right', '5.4rem');
-            } else if (size.classList.contains('font-size-2')) {
-                fontSize = '13px';
-                root.style.setProperty('----sticky-top-left', '5.4rem');
-                root.style.setProperty('----sticky-top-right', '-7rem');
-            } else if (size.classList.contains('font-size-3')) {
-                fontSize = '16px';
-                root.style.setProperty('----sticky-top-left', '-2rem');
-                root.style.setProperty('----sticky-top-right', '-17rem');
-            } else if (size.classList.contains('font-size-4')) {
-                fontSize = '19px';
-                root.style.setProperty('----sticky-top-left', '-5rem');
-                root.style.setProperty('----sticky-top-right', '-25rem');
-            } else if (size.classList.contains('font-size-5')) {
-                fontSize = '22px';
-                root.style.setProperty('----sticky-top-left', '-12rem');
-                root.style.setProperty('----sticky-top-right', '-35rem');
-            }
 
-            //change font size of the root html element
-            document.querySelector('html').style.fontSize = fontSize
+            size.addEventListener('click', () => {
+                removeSizeSlector();
+                let fontSize;
+                size.classList.toggle('active');
+
+                if (size.classList.contains('font-size-1')) {
+                    fontSize = '10px';
+                    root.style.setProperty('----sticky-top-left', '5.4rem');
+                    root.style.setProperty('----sticky-top-right', '5.4rem');
+                } else if (size.classList.contains('font-size-2')) {
+                    fontSize = '13px';
+                    root.style.setProperty('----sticky-top-left', '5.4rem');
+                    root.style.setProperty('----sticky-top-right', '-7rem');
+                } else if (size.classList.contains('font-size-3')) {
+                    fontSize = '16px';
+                    root.style.setProperty('----sticky-top-left', '-2rem');
+                    root.style.setProperty('----sticky-top-right', '-17rem');
+                } else if (size.classList.contains('font-size-4')) {
+                    fontSize = '19px';
+                    root.style.setProperty('----sticky-top-left', '-5rem');
+                    root.style.setProperty('----sticky-top-right', '-25rem');
+                } else if (size.classList.contains('font-size-5')) {
+                    fontSize = '22px';
+                    root.style.setProperty('----sticky-top-left', '-12rem');
+                    root.style.setProperty('----sticky-top-right', '-35rem');
+                }
+
+                //change font size of the root html element
+                document.querySelector('html').style.fontSize = fontSize
+            })
+
+
         })
 
+        // remove active class from colors
+        const changeActivecolorClass = (=> {
+            colorPalette.forEach(colorPicker => {
+                colorPicker.classList.remove('active');
+            })
 
+            // change primary colors 
+            colorPalette.forEach(color => {
+                color.addEventListener('click', () => {
+                    let primary;
+                    // remove active class from colors
+                    changeActivecolorClass()
+
+                    if (color.classList, contains(color - 1)) {
+                        primaryHue = 252;
+
+                    } else if (color.classList.contains(color - 2)) {
+                        primaryHue = 52;
+                    } else if (color.classList.contains(color - 2)) {
+                        primaryHue = 352;
+                    } else if (color.classList.contains(color - 2)) {
+                        primaryHue = 152;
+                    } else if (color.classList.contains(color - 2)) {
+                        primaryHue = 202;
+                    }
+                    color.classList.add('active');
+                    root.style.setProperty('--primary-color-hue', primaryHue);
+        )
+            }
     })
 
-    // remove active class from colors
-    const changeActivecolorClass = ( => {
-        colorPalette.forEach(colorPicker => {
-            colorPicker.classList.remove('active');
+
+
+        // theme BACKGROUND values
+        let lightColorLightness;
+        let whiteColorLightness;
+        let darkColorLightness;
+
+        // change background color
+        root.style.setProperty('--light-color-lightness', lightColorLightness);
+        root.style.setProperty('--white-color-lightness', whiteColorLightness);
+        root.style.setProperty('--dark-color-lightness', darkColorLightness);
+
+        Bg1.addEventListener('click', () => {
+            // add active class
+            Bg2.classList.add('avtive');
+            // remove active class from the others
+            Bg1.classList.remove('active');
+            Bg3.classList.remove('active');
+            window.location.reload();
         })
 
-    // change primary colors 
-    colorPalette.forEach(color => {
-        color.addEventListener('click', () => {
-            let primary;
-            // remove active class from colors
-            changeActivecolorClass()
+        Bg2.addEventListener('click', () => {
+            darkColorLightness = '95%';
+            whiteColorLightness = '20%';
+            lightColorLightness = '15%';
 
-            if(color.classList,contains(color-1)){
-                primaryHue = 252;
-                
-            }else if(color.classList.contains(color-2)){
-                primaryHue = 52;
-            }else if(color.classList.contains(color-2)){
-                primaryHue = 352;
-            }else if(color.classList.contains(color-2)){
-                primaryHue = 152;
-            }else if(color.classList.contains(color-2)){
-                primaryHue = 202;
-            }
-            color.classList.add('active');
-            root.style.setProperty('--primary-color-hue', primaryHue);
-        )}
-    })
+            // add active class
+            Bg2.classList.add('avtive');
+            // remove active class from the others
+            Bg1.classList.remove('active');
+            Bg3.classList.remove('active');
+            changeBG();
+        });
 
+        Bg2.addEventListener('click', () => {
+            darkColorLightness = '95%';
+            whiteColorLightness = '10%';
+            lightColorLightness = '0%';
 
-
-    // theme BACKGROUND values
-    let lightColorLightness;
-    let whiteColorLightness;
-    let darkColorLightness;
-
-    // change background color
-    root.style.setProperty('--light-color-lightness', lightColorLightness);
-    root.style.setProperty('--white-color-lightness', whiteColorLightness);
-    root.style.setProperty('--dark-color-lightness', darkColorLightness);
-
-    Bg1.addEventListener('click', () => {
-        // add active class
-        Bg2.classList.add('avtive');
-        // remove active class from the others
-        Bg1.classList.remove('active');
-        Bg3.classList.remove('active');
-        window.location.reload();
-    })
-
-    Bg2.addEventListener('click', () => {
-        darkColorLightness = '95%';
-        whiteColorLightness = '20%';
-        lightColorLightness = '15%';
-
-        // add active class
-        Bg2.classList.add('avtive');
-        // remove active class from the others
-        Bg1.classList.remove('active');
-        Bg3.classList.remove('active');
-        changeBG();
-    });
-
-    Bg2.addEventListener('click', () => {
-        darkColorLightness = '95%';
-        whiteColorLightness = '10%';
-        lightColorLightness = '0%';
-
-        // add active class
-        Bg2.classList.add('avtive');
-        // remove active class from the others
-        Bg1.classList.remove('active');
-        Bg3.classList.remove('active');
-        changeBG();
-    });
+            // add active class
+            Bg2.classList.add('avtive');
+            // remove active class from the others
+            Bg1.classList.remove('active');
+            Bg3.classList.remove('active');
+            changeBG();
+        });
